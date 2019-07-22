@@ -1,0 +1,90 @@
+/* ----------- Layout ----------- */
+html,body {
+    height: 100%;
+    background: url('../images/background_index.jpg') no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+/* ----------- Barra de Navegação ----------- */
+.barra {
+    padding: 20px 0px 20px 0px;
+    display: block;
+}
+.logo {
+    background: url('../images/logo.png') no-repeat;
+    height: 70px;
+    width: 220px;
+    margin-top: -8px;
+    display: block;
+    background-size: contain;
+    color: transparent;
+}
+.navbar-default{
+    background: #585858;
+    color: white;
+}
+.navbar-brand {
+    padding: 0px 15px;
+    margin-top: 0px;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #BDBDBD;
+}
+.dropStyle {
+    background: #0B610B;
+    color: white;
+}
+.dropStyle > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+	color: white;
+}
+
+/* ----------- Rodapé ----------- */
+footer {
+    background: #424242;
+    color: white;
+    padding: 5px 0px 5px 5px;
+    position: relative;
+    text-align: center;
+}
+.rodape {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    padding-bottom: 35px;
+}
+
+/* ----------- Conteúdo ----------- */
+.caixa {
+    background: white;
+    margin-top: 35%;
+    margin-bottom: 50%;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 100%;
+
+    border-radius: 20px;
+}
+
+.titulo {
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+}
+
+.botao_login {
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+}
