@@ -1,6 +1,8 @@
 # Restrição de Horários no Moodle
-Modificação na autenticação do sistema Moodle. A seguir temos o codigo que foi adicionado no arquivo do moodle:
-
+Restrição de horários que não permitem o acesso à plataforma Moodle durante os horários definidos. A seguir temos o codigo que foi adicionado no arquivo do moodle:
+```
+(linha 4323) moodle/lib/moodlelib.php
+```
 ```
 // Ajuste de Autenticação no Moodle
 // Entrada somente nos horários que não estão restringidos
@@ -12,9 +14,6 @@ try {
 
 }
 ```
-```
-(linha 4323) moodle/lib/moodlelib.php
-```
 
 # Requisitos
 * Apache 2
@@ -22,10 +21,11 @@ try {
 * Postgres 9.5
 * Moodle 3.6.5
 
-
  # Instalação
- 1. Colar a pasta `moodle` dentro do programa do Moodle;
- 2. Atualizar a tabela `mdl_user` para adicionar um campo que defina se um usuário é professor;
- 3. Instalar o `docs/bd.sql` no banco de dados do Moodle, verificando se o Moodle terá acesso as novas tabelas (verificação de privilégios);
- 4. Colocar os demais arquivos do sistema `Horarios-Moodle` dentro de um servidor;
- 5. Configurar as credenciais do sistema para acessar o banco de dados do Moodle no `models/bd.class.php`.
+ 1. Colar a pasta `moodle` dentro da pasta do sistema Moodle;
+ 2. Atualizar a tabela `mdl_user` para adicionar uma nova coluna que defina o privilégio do usuário com o `docs/updateUserMoodle.sql`;
+ 3. Modificar os registros na tabela `mdl_user` dos usuários que serão restringidos pelo sistema com `privilege = 1`;
+ 4. Instalar o `docs/bd.sql` no banco de dados do Moodle, verificando se o Moodle terá acesso as novas tabelas (verificação de privilégios);
+ 5. Colocar os arquivos do sistema `Horarios-Moodle` dentro de um servidor;
+ 6. Configurar as credenciais de acesso ao banco de dados do sistema dentro de `models/bd.class.php` para acessar o banco de dados do Moodle;
+ 7. Registrar os usuários do Moodle que terão acesso ao sistema `Horarios-Moodle` com `privilege = 2`.
