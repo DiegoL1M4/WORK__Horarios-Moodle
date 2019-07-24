@@ -44,6 +44,11 @@ CREATE TABLE mdl_auth_rest (
 );
 ```
 
+```
+ALTER TABLE mdl_user ADD privilege integer;
+UPDATE mdl_user SET privilege = 0;
+```
+
 ## Algumas querys:
 
 ```
@@ -59,9 +64,18 @@ SELECT * FROM mdl_auth_rest WHERE id_user = 1 AND id_dia = 1 AND id_horario = 1;
 ```
 
 ```
-DELETE FROM mdl_auth_rest WHERE id_user = 1;
+DELETE FROM mdl_auth_rest WHERE id_user = $id;
 ```
 
 ```
 INSERT INTO mdl_auth_rest (id_user, id_dia, id_horario) VALUES ($id, $unid, $deci);
+```
+```
+UPDATE mdl_user SET privilege = 1 WHERE username = 'guest';
+```
+```
+SELECT * FROM mdl_user WHERE privilege > 0;
+```
+```
+SELECT id_horario, id_dia FROM mdl_auth_rest WHERE id_user = $id
 ```
