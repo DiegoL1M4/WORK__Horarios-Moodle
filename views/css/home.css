@@ -1,0 +1,10 @@
+/* Tabela */
+.tabela {
+	text-align: center;
+	
+}
+.coluna {
+	width: 70px;
+	text-align: center;
+	border: 1px black solid;
+}
