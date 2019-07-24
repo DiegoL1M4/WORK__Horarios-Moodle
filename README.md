@@ -18,6 +18,7 @@ $constraints = 'num = 0';
  # Instalação
  
  1. Colar a pasta `moodle` dentro do programa do Moodle
- 2. Instalar o `docs/bd.sql` no banco de dados do Moodle
- 3. Colocar os demais arquivos do sistema `Horarios-Moodle` dentro de um servidor
- 4. Configurar as credenciais do sistema para acessar o banco de dados do Moodle
+ 2. Atualizar a tabela `mdl_user` para adicionar um campo que defina se um usuário é professor
+ 3. Instalar o `docs/bd.sql` no banco de dados do Moodle
+ 4. Colocar os demais arquivos do sistema `Horarios-Moodle` dentro de um servidor
+ 5. Configurar as credenciais do sistema para acessar o banco de dados do Moodle no `models/bd.class.php`
