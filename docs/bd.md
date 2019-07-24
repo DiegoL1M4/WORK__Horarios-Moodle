@@ -59,11 +59,9 @@ SELECT * FROM mdl_auth_rest WHERE id_user = 1 AND id_dia = 1 AND id_horario = 1;
 ```
 
 ```
-if(tem no banco) {
-	if(! ta marcado) {
-		DELETE FROM mdl_auth_rest WHERE id_user = 1 AND id_dia = 1 AND id_horario = 1;
-	}
-}else {
-	if(ta marcado) {
-		INSERT INTO mdl_auth_rest (id_user, id_dia, id_horario)
+DELETE FROM mdl_auth_rest WHERE id_user = 1;
+```
+
+```
+INSERT INTO mdl_auth_rest (id_user, id_dia, id_horario) VALUES ($id, $unid, $deci);
 ```
