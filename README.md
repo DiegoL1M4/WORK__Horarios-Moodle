@@ -13,7 +13,7 @@ try {
 }
 ```
 ```
-(linha 4344) moodle/lib/moodlelib.php
+(linha 4323) moodle/lib/moodlelib.php
 ```
 
 # Requisitos
