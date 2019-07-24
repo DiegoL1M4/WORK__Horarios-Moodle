@@ -1,3 +1,12 @@
+
+<?php
+    // Verificação de Autenticação
+    session_start();
+
+    if( isset($_SESSION['nome']) )
+        header('Location: views/home/home.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     
@@ -24,12 +33,9 @@
             <div class="caixa">
                 <h2 class="titulo">Sistema de Restrição de Horários do Moodle</h2> <br>
 
-                <form method="post" action="../models/login/login.php">
-                    <label>Login:</label>
+                <form method="post" action="models/login/login.php">
+                    <label>Username Moodle:</label>
                     <input class="form-control" type="text" name="login">
-                    <br>
-                    <label>Senha:</label>
-                    <input class="form-control" type="password" name="senha">
 
                     <br><br>
                     <button class="botao_login btn btn-primary" type="submit">Login</button>

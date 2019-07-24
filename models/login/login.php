@@ -12,9 +12,8 @@
 
 	} else {
 		$login = $_POST['login'];
-		$senha = $_POST['senha'];
 
-		$consulta = pg_query($conexao, "SELECT * FROM usuario WHERE nome = '$login' AND senha = '$senha'");
+		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE username = '$login' AND privilege = 2");
 
 		$resultado = pg_fetch_array($consulta);
 
@@ -25,9 +24,9 @@
 		}
 
 		// Login efetuado com sucesso
-		if( isset($resultado['nome']) ) {
+		if( isset($resultado['firstname']) ) {
 			$_SESSION['id'] = $resultado['id'];
-			$_SESSION['nome'] = $resultado['nome'];
+			$_SESSION['nome'] = $resultado['firstname'];
 		}
 
 		pg_close ($conexao);

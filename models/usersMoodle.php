@@ -10,9 +10,9 @@
 
 	} else {
 
-		$consulta = pg_query($conexao, "SELECT * FROM mdl_user;");
+		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE privilege > 0;");
 
-		echo "<option selected>Selecione uma das opções:</option>";
+		echo "<option selected>Selecione um professor</option>";
 
 		while( $resultado = pg_fetch_array($consulta) ) {
 			echo "
