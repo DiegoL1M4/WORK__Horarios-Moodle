@@ -5,7 +5,7 @@ Modificação na autenticação do sistema Moodle. A seguir temos o codigo que f
 // Ajuste de Autenticação no Moodle
 // Entrada somente nos horários que não estão restringidos
 try {
-    $constraints = 'id_user = 1 AND id_dia = extract(DOW FROM CURRENT_TIMESTAMP) AND id_horario = (SELECT id_horario FROM mdl_auth_rest_horario WHERE inicio < CURRENT_TIME AND CURRENT_TIME < final)';
+    $constraints = "id_user = (SELECT id FROM mdl_user WHERE username = '$username') AND id_dia = extract(DOW FROM CURRENT_TIMESTAMP) AND id_horario = (SELECT id_horario FROM mdl_auth_rest_horario WHERE inicio < CURRENT_TIME AND CURRENT_TIME < final)";
     $DB->get_record_select('auth_rest', $constraints, null, '*', MUST_EXIST);
     return false;
 } catch (dml_exception $exception) {
