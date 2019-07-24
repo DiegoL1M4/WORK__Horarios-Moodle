@@ -33,15 +33,76 @@
 
         	<div class="collapse navbar-collapse" id="barra-navegacao">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <a href="index.php">INÍCIO</a> </li>
+                    <li><a href="index.php">Bem-vindo,</a> </li>
+                    <li><a href="index.php">Logout</a> </li>
                 </ul>
         	</div>   
         </div>
 	</nav>
 	
 <!-- ------------------- Conteúdo ------------------- -->
+    <br><br><br><br><br><br><br><br><br><br>
     <div class="container">
-
+        <div class="row">
+            <div class="col-sm-4">aa</div>
+            <div class="col-sm-8">
+                <table style="border: 1px black solid">
+                    <tr>
+                        <th> </th>
+                        <th> </th>
+                        <th>Domingo</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                        <th>Sábado</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Manhã</th>
+                        <th>AB</th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                    </tr>
+                    <tr>
+                        <th>CD</th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Tarde</th>
+                        <th>AB</th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                    </tr>
+                    <tr>
+                        <th>CD</th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                        <th> <input type="checkbox" name=""> </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     
 <!-- ------------------- Rodapé ------------------- -->
