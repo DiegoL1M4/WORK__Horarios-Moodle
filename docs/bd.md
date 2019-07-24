@@ -3,13 +3,13 @@ CREATE TABLE dias (
 	nome varchar(7),
 	PRIMARY KEY(id_dia)
 );
-INSERT INTO dias (nome) VALUES ('Domingo'),
-							   ('Segunda'),
-							   ('Terça'),
-							   ('Quarta'),
-							   ('Quinta'),
-							   ('Sexta'),
-							   ('Sábado');
+INSERT INTO dias (nome) VALUES  ('Domingo'),
+				('Segunda'),
+				('Terça'),
+				('Quarta'),
+				('Quinta'),
+				('Sexta'),
+				('Sábado');
 
 
 CREATE TABLE horarios (
@@ -20,14 +20,14 @@ CREATE TABLE horarios (
 	PRIMARY KEY(id_horario)
 );
 INSERT INTO horarios (nome,inicio,final) VALUES ('AB - M', '07:40:00', '09:40:00'),
-								  				('CD - M', '10:00:00', '12:00:00'),
-								   				('AB - T', '13:30:00', '15:30:00'),
-								   				('CD - T', '15:50:00', '17:50:00'),
-								   				('AB - N', '18:00:00', '20:00:00'),
-								   				('CD - N', '20:00:00', '22:00:00');
+						('CD - M', '10:00:00', '12:00:00'),
+						('AB - T', '13:30:00', '15:30:00'),
+						('CD - T', '15:50:00', '17:50:00'),
+						('AB - N', '18:00:00', '20:00:00'),
+						('CD - N', '20:00:00', '22:00:00');
 
 
-CREATE TABLE restricoes (
+CREATE TABLE mdl_autenticacao_rest (
 	id_restricao serial,
 	id_user int,
 	id_dia int,
