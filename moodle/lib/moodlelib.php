@@ -4294,27 +4294,6 @@ function guest_user() {
     return $newuser;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Authenticates a user against the chosen authentication mechanism
  *
@@ -4342,16 +4321,15 @@ function authenticate_user_login($username, $password, $ignorelockout=false, &$f
     global $CFG, $DB;
     require_once("$CFG->libdir/authlib.php");
 
-
     // Ajuste de Autenticação no Moodle
+    // Entrada somente nos horários que não estão restringidos
 	try {
-		//$idUser = $DB->get_record_select('user', 'username = $username', null, '*', MUST_EXIST);
-		$constraints = 'num = 0';
-        $DB->get_record_select('a', $constraints, null, '*', MUST_EXIST);
-    } catch (dml_exception $exception) {
+		$constraints = "id_user = (SELECT id FROM mdl_user WHERE username = '$username') AND id_dia = extract(DOW FROM CURRENT_TIMESTAMP) AND id_horario = (SELECT id_horario FROM mdl_auth_rest_horario WHERE inicio < CURRENT_TIME AND CURRENT_TIME < final)";
+        $DB->get_record_select('auth_rest', $constraints, null, '*', MUST_EXIST);
         return false;
+    } catch (dml_exception $exception) {
+        
     }
-
 
     if ($user = get_complete_user_data('username', $username, $CFG->mnet_localhost_id)) {
         // we have found the user
@@ -4795,37 +4773,6 @@ function update_internal_user_password($user, $password, $fasthash = false) {
 
     return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**
  * Get a complete user record, which includes all the info in the user record.
