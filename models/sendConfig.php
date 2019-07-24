@@ -12,6 +12,11 @@
 
 		$id = $_POST['userProf'];
 
+		if ($id == 'Selecione um professor') {
+			pg_close ($conexao);
+			header("Location: ../views/home/home.php");	
+		}
+
 		// Deleta todas as entradas
 		pg_query($conexao, "DELETE FROM mdl_auth_rest WHERE id_user = $id;")
 		or die ("Erro de autenticação no acesso ao banco de dados!");

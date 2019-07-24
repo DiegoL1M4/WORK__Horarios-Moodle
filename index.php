@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>  </title>
+    <title> Sistema de Restrição de Horários do Moodle </title>
     <link rel="icon" href="favicon.ico">
 
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
     <footer class="rodape">
         <div class="container">
                 <div class="row">
-                    <h5></h5>
+                    <h5>Desenvolvido por: <a style="color: white" target="_blank" href="https://github.com/DiegoL1M4">Diego Lima</a></h5>
                 </div>
         </div>
     </footer>
