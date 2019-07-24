@@ -23,7 +23,7 @@ try {
 
  # Instalação
  1. Colar a pasta `moodle` dentro da pasta do sistema Moodle;
- 2. Atualizar a tabela `mdl_user` para adicionar uma nova coluna que defina o privilégio do usuário com o `docs/updateUserMoodle.sql`;
+ 2. Atualizar a tabela `mdl_user` com o arquivo `docs/updateUserMoodle.sql` para adicionar uma nova coluna que defina o privilégio dos usuários;
  3. Modificar os registros na tabela `mdl_user` dos usuários que serão restringidos pelo sistema com `privilege = 1`;
  4. Instalar o `docs/bd.sql` no banco de dados do Moodle, verificando se o Moodle terá acesso as novas tabelas (verificação de privilégios);
  5. Colocar os arquivos do sistema `Horarios-Moodle` dentro de um servidor;
