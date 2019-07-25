@@ -29,3 +29,17 @@ try {
  5. Colocar os arquivos do sistema `Horarios-Moodle` dentro de um servidor;
  6. Configurar as credenciais de acesso ao banco de dados do sistema dentro de `models/bd.class.php` para acessar o banco de dados do Moodle;
  7. Registrar os usuários do Moodle que terão acesso ao sistema `Horarios-Moodle` com `privilege = 2`.
+
+# Imagens da aplicação
+
+### Tela de Login
+![](https://github.com/DiegoL1M4/WORK__Horarios-Moodle/blob/master/docs/Imagens/login.png)
+
+### Tela Inicial
+![](https://github.com/DiegoL1M4/WORK__Horarios-Moodle/blob/master/docs/Imagens/home.png)
+
+### Características da Tela Inicial
+![](https://github.com/DiegoL1M4/WORK__Horarios-Moodle/blob/master/docs/Imagens/caracteristicas.png)
+
+### Tela de Login do Moodle
+![](https://github.com/DiegoL1M4/WORK__Horarios-Moodle/blob/master/docs/Imagens/moodle.png)
