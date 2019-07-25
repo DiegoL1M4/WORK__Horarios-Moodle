@@ -43,7 +43,7 @@
 
         	<div class="collapse navbar-collapse" id="barra-navegacao">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Bem-vindo <?= $_SESSION['nome']?>,</a> </li>
+                    <li><a>Bem-vindo <?= $_SESSION['nome']?>,</a> </li>
                     <li><a href="../../models/login/logout.php">Logout</a> </li>
                 </ul>
         	</div>   
