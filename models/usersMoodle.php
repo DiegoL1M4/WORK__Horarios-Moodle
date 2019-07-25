@@ -12,7 +12,7 @@
 
 		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE privilege > 0;");
 
-		echo "<option selected>Selecione um professor</option>";
+		echo "<option selected>Selecione um usuário</option>";
 
 		while( $resultado = pg_fetch_array($consulta) ) {
 			echo "
