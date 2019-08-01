@@ -12,11 +12,14 @@
 
 		$letra =$_POST['letra'];
 		
-		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE firstname like '$letra%';");
+		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE firstname like '$letra%' ORDER BY firstname ASC;");
+		
 
 		while( $resultado = pg_fetch_array($consulta) ) {
 			echo "
-				<button type=\"button\" onclick=\"carregarDados($resultado[0])\">$resultado[10] $resultado[11]</button>
+				<button type=\"button\" onclick=\"carregarDados($resultado[0])\" class=\"btn btn-success botao\" data-toggle=\"modal\" data-target=\"#janela\">
+					$resultado[10] $resultado[11]
+				</button>
 			";
 		}
 		

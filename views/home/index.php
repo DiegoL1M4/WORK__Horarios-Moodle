@@ -6,7 +6,7 @@
 <link href="../css/home.css" rel="stylesheet">
     
 <!-- ------------------- Conteúdo/HOME ------------------- -->
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
 
     <script type="text/javascript">
         $(document).ready( function() {
@@ -22,7 +22,12 @@
                 method: 'post',
                 data: {'letra': letra},
                 success: function(data) {
-                    $("#painelResultado").html(data);
+                    if(data != ""){
+                        $("#painelResultado").html("<center>  <h2>Lista de Professores</h2>  </center>");
+                        $("#painelResultado").append(data);
+                    } else {
+                        $("#painelResultado").html("<center>    <h2>Sem informações para mostrar!</h2>      <h5>Pressione uma das letras acima.</h5>      </center>");
+                    }
                 }
             });
         }
@@ -31,13 +36,17 @@
     
     <div class="container">
         <center>
-            <div class="panel-body" id="painelFiltro">
+            <div class="panel-body painelLetras" id="painelFiltro">
         
             </div>
         </center>
 
-        <div id="painelResultado">
-            
+        <!-- Local onde serão mostrados os usuários com a inicial -->
+        <div id="painelResultado" class="caixa">
+            <center>
+                <h2>Sem informações para mostrar!</h2>
+                <h5>Pressione uma das letras acima.</h5>
+            </center>
         </div>
         
     </div>
@@ -58,6 +67,8 @@
                     });
                 }
             });
+
+            $('#identificador').val(id);
         }
 
         function limparCampos() {
@@ -77,114 +88,88 @@
     </script>
     
 
+    <!-- Janela -->
+    <div class="modal fade" id="janela">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form method="post" action="../../models/sendConfig.php">
+                    <!-- cabecalho -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                        </button>
+                        <h2 class="modal-title"> Restrições de Acesso ao Sistema Moodle </h2>
+                    </div>
 
+                    <!-- corpo -->
+                    <div class="modal-body">
+                        <center>
 
+                            <!-- Campo invisível que define o id -->
+                            <input type="text" name="id" id="identificador" class="hidden">
 
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="coluna">Turno</th>
+                                    <th class="coluna">Período</th>
+                                    <th class="coluna">Segunda</th>
+                                    <th class="coluna">Terça</th>
+                                    <th class="coluna">Quarta</th>
+                                    <th class="coluna">Quinta</th>
+                                    <th class="coluna">Sexta</th>
+                                </tr>
+                                <tr>
+                                    <th class="coluna" rowspan="2">Manhã</th>
+                                    <th class="coluna">AB</th>
+                                    <th class="coluna"> <input type="checkbox" name="11" id="11" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="12" id="12" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="13" id="13" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="14" id="14" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="15" id="15" value="true"> </th>
+                                </tr>
+                                <tr>
+                                    <th class="coluna">CD</th>
+                                    <th class="coluna"> <input type="checkbox" name="21" id="21" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="22" id="22" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="23" id="23" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="24" id="24" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="25" id="25" value="true"> </th>
+                                </tr>
+                                <tr>
+                                    <th class="coluna" rowspan="2">Tarde</th>
+                                    <th class="coluna">AB</th>
+                                    <th class="coluna"> <input type="checkbox" name="31" id="31" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="32" id="32" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="33" id="33" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="34" id="34" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="35" id="35" value="true"> </th>
+                                </tr>
+                                <tr>
+                                    <th class="coluna">CD</th>
+                                    <th class="coluna"> <input type="checkbox" name="41" id="41" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="42" id="42" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="43" id="43" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="44" id="44" value="true"> </th>
+                                    <th class="coluna"> <input type="checkbox" name="45" id="45" value="true"> </th>
+                                </tr>
+                            </table>
 
+                            
+                        </center>
+                    </div>
 
-
-
-
-    <br><br><br><br><br><br><br><br><br><br>
-    <div class="container caixa">
-        <div class="row">
-            <form method="post" action="../../models/sendConfig.php">
-                <div class="col-sm-12">
-                    <center>
-                        <table class="table table-striped">
-                            <tr>
-                                <th class="tituloTab teste" colspan="7">Restrições de Acesso ao Sistema Moodle</th>
-                            </tr>
-                            <tr>
-                                <th class="coluna" colspan="7">
-                                    <select class= "coluna form-control" name="userProf" id="userProf" onchange="limparCampos()"></select>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="coluna">Turno</th>
-                                <th class="coluna">Período</th>
-                                <th class="coluna">Segunda</th>
-                                <th class="coluna">Terça</th>
-                                <th class="coluna">Quarta</th>
-                                <th class="coluna">Quinta</th>
-                                <th class="coluna">Sexta</th>
-                            </tr>
-                            <tr>
-                                <th class="coluna" rowspan="2">Manhã</th>
-                                <th class="coluna">AB</th>
-                                <th class="coluna"> <input type="checkbox" name="11" id="11" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="12" id="12" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="13" id="13" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="14" id="14" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="15" id="15" value="true"> </th>
-                            </tr>
-                            <tr>
-                                <th class="coluna">CD</th>
-                                <th class="coluna"> <input type="checkbox" name="21" id="21" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="22" id="22" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="23" id="23" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="24" id="24" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="25" id="25" value="true"> </th>
-                            </tr>
-                            <tr>
-                                <th class="coluna" rowspan="2">Tarde</th>
-                                <th class="coluna">AB</th>
-                                <th class="coluna"> <input type="checkbox" name="31" id="31" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="32" id="32" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="33" id="33" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="34" id="34" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="35" id="35" value="true"> </th>
-                            </tr>
-                            <tr>
-                                <th class="coluna">CD</th>
-                                <th class="coluna"> <input type="checkbox" name="41" id="41" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="42" id="42" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="43" id="43" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="44" id="44" value="true"> </th>
-                                <th class="coluna"> <input type="checkbox" name="45" id="45" value="true"> </th>
-                            </tr>
-                        </table>
-
-                        <button class="btn btn-success" type="submit">Enviar</button>
-                    </center>
-                </div>
-
-                <script type="text/javascript">
-                    $(document).ready( function() {
-                        $.ajax( {
-                            url: '../../models/usersMoodle.php',
-                            method: 'post',
-                            success: function(data) {
-                                $('#userProf').html(data);
-                            }
-                        } );
-                        limparCampos();
-                    } );
-
-                    
-               
-                    $('#userProf').change( function() {
-                        $.ajax( {
-                            url: '../../models/userEscolhido.php',
-                            method: 'post',
-                            data: $('#userProf').serialize(),
-                            success: function(data) {
-                                var n = data.split("/");
-                                
-                                limparCampos();
-
-                                n.forEach(function(valor){
-                                    $("#" + valor).prop("checked", true);
-                                });
-
-                            }
-                        } );
-                    } );
-                </script>
-            </form>
+                    <!-- rodape -->
+                    <div class="modal-footer">
+                        <center>
+                            <button class="btn btn-success" type="submit">Enviar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" >Voltar</button>
+                        </center>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <br><br><br><br><br><br>
+
     
 <?php
     require_once('../../views/layout/footer.php');

@@ -10,7 +10,7 @@
 
 	} else {
 
-		$id = $_POST['userProf'];
+		$id = $_POST['id'];
 
 		if ($id == 'Selecione um professor') {
 			pg_close ($conexao);
@@ -42,7 +42,7 @@
 		}
 
 		pg_close ($conexao);
-		header("Location: ../views/home/home.php");
+		header("Location: ../views/home");
 
 	}
 
