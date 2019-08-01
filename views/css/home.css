@@ -1,23 +1,5 @@
-
-body {
-	background: #848484;
-}
-
-
-.caixa {
-	background: #FAFAFA;
-	width: 650px;
-	padding: 35px 40px 25px 40px;
-	border-radius: 100px;
-	box-shadow: 2px 2px 10px 1px #000, -2px -2px 10px 1px #000;
-}
-
-/* Tabela */
-.tituloTab {
-	text-align: center;
-	font-weight: 700;
-	font-size: 21px;
-}
-.coluna {
-	text-align: center;
+#painelResultado {
+	background: white;
+	width: 100%;
+	padding: 30px;
 }
