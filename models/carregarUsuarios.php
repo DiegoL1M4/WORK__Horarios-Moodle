@@ -9,8 +9,10 @@
         print "Não foi possível estabelecer uma conexão com o banco de dados.";
 
 	} else {
+
+		$letra =$_POST['letra'];
 		
-		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE firstname like $_POST['letra']%;");
+		$consulta = pg_query($conexao, "SELECT * FROM mdl_user WHERE firstname like '$letra%';");
 
 		while( $resultado = pg_fetch_array($consulta) ) {
 			echo "

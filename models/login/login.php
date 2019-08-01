@@ -31,7 +31,7 @@
 
 		pg_close ($conexao);
 
-		header('Location: ../../views/home/home.php');
+		header('Location: ../../views/home');
 	}
 
 ?>

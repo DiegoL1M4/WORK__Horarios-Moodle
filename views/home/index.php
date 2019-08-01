@@ -58,7 +58,22 @@
                     });
                 }
             });
-        });
+        }
+
+        function limparCampos() {
+            var deci = 1; // Simboliza o id do horario
+            var unid = 1; // Simboliza o id do dia
+            for (var i = 0; i < 20; i++) {
+                $("#" + deci + unid).prop("checked", false);
+
+                // Ajuste
+                unid++;
+                if (unid > 5) {
+                    unid = 1;
+                    deci++;
+                }
+            }
+        }
     </script>
     
 
@@ -146,20 +161,7 @@
                         limparCampos();
                     } );
 
-                    function limparCampos() {
-                        var deci = 1; // Simboliza o id do horario
-                        var unid = 1; // Simboliza o id do dia
-                        for (var i = 0; i < 20; i++) {
-                            $("#" + deci + unid).prop("checked", false);
-
-                            // Ajuste
-                            unid++;
-                            if (unid > 5) {
-                                unid = 1;
-                                deci++;
-                            }
-                        }
-                    }
+                    
                
                     $('#userProf').change( function() {
                         $.ajax( {

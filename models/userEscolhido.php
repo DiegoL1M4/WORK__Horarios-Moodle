@@ -10,7 +10,7 @@
 
 	} else {
 
-		$id = $_POST['userProf'];
+		$id = $_POST['id'];
 
 
 		$consulta = pg_query($conexao, "SELECT id_horario, id_dia FROM mdl_auth_rest WHERE id_user = $id;");

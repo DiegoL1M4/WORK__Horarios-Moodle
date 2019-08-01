@@ -4,7 +4,7 @@
 
 		private $host = 'localhost';
 		private $usuario = 'moodleuser';
-		private $senha = 'senha';
+		private $senha = 'c331';
 		private $database = 'moodle';
 
 		public function estabelecerConexao() {
