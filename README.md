@@ -19,9 +19,11 @@ try {
 * Apache 2
 * PHP 7.3
 * Postgres 9.5
+* Bootstrap 3
 * Moodle 3.6.5
 
  # Instalação
+ ##### Vídeo: [Clique aqui!](https://youtu.be/jRXNcOxyj-E)
  1. Colar a pasta `moodle` dentro da pasta do sistema Moodle;
  2. Atualizar a tabela `mdl_user` com o arquivo `docs/updateUserMoodle.sql` para adicionar uma nova coluna que defina o privilégio dos usuários;
  3. Modificar os registros na tabela `mdl_user` dos usuários que serão restringidos pelo sistema com `privilege = 1`;
@@ -29,6 +31,7 @@ try {
  5. Colocar os arquivos do sistema `Horarios-Moodle` dentro de um servidor;
  6. Configurar as credenciais de acesso ao banco de dados do sistema dentro de `models/bd.class.php` para acessar o banco de dados do Moodle;
  7. Registrar os usuários do Moodle que terão acesso ao sistema `Horarios-Moodle` com `privilege = 2`.
+ 
 
 # Imagens da aplicação
 
