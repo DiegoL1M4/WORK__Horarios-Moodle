@@ -14,6 +14,14 @@ try {
 
 }
 ```
+Outro arquivo também foi alterado para mostrar uma outra mensagem de erro quando há falha no login. A seguir temos a parte do código que foi alterado:
+
+```
+(linha 117) moodle/lib/templates/loginform.mustache
+```
+```
+<div class="alert alert-danger" role="alert" data-aria-autofocus="true">Erro na autenticação do usuário.</div>
+```
 
 # Requisitos
 * Apache 2
