@@ -44,9 +44,6 @@
         	<div class="collapse navbar-collapse" id="barra-navegacao">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../home">Home</a> </li>
-                    <li><a href="../cadastro">Professores</a> </li>
-                    <li><a href="../campus">Campus</a> </li>
-                    <li><a href="../horarios">Horarios</a> </li>
                     <li><a>Bem-vindo <?= $_SESSION['nome']?>,</a> </li>
                     <li><a href="../../models/login/logout.php">Logout</a> </li>
                 </ul>
